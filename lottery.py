@@ -1,4 +1,4 @@
-# lottery
+# lottery.py
 # 2019-02-28 Tom Wzietek
 
 import random
@@ -30,16 +30,13 @@ def sixFortyNine():
             if a is b:
                 matching_num.append(a)
 
-    print('matching', matching_num)
+    print('matching', sorted(matching_num))
 
 # main
-counter = 0
+counter = 1
 
 while True:
-    counter += 1
-
     print('\ndraw #', counter)
-
     sixFortyNine()
 
     result = len(matching_num)
@@ -60,4 +57,6 @@ while True:
             print(int(years), 'years', int(months), 'months')
 
         input()
+
+    counter += 1
 # eof
