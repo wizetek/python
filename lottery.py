@@ -57,10 +57,10 @@ def howLong():
 weeks = 1
 
 while True:
-    print('draw #', weeks)
+    print('\ndraw #', weeks)
     sixFortyNine()
     result = len(matching_num)
-    print('correct', result, '\n')
+    print('correct', result)
 
     # if result == 6:
     if result >= 4:
