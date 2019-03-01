@@ -1,9 +1,11 @@
 # lottery.py
-# 2019-02-28 Tom Wzietek
+# 2019-02-28 Tom Wizetek
 
 import random
 
+#
 # functions
+#
 def draw(n, p):
     s = set()
 
@@ -32,31 +34,38 @@ def sixFortyNine():
 
     print('matching', sorted(matching_num))
 
+def howLong():
+    years = weeks / 52
+
+    if weeks < 5:
+        days = weeks * 7
+        print(int(days), 'days')
+    elif weeks < 52:
+        months = years * 12
+        print(int(months), 'months')
+    else:
+        months = years % int(years) * 12
+
+        if months < 1:
+            print(int(years), 'years')
+        else:
+            print(int(years), 'years,', int(months), 'months')
+
+#
 # main
-counter = 1
+#
+weeks = 1
 
 while True:
-    print('\ndraw #', counter)
+    print('\ndraw #', weeks)
     sixFortyNine()
-
     result = len(matching_num)
     print('matched', result)
 
     # if result == 6:
     if result >= 4:
-        years = counter / 52
-
-        if counter < 5:
-            days = counter * 7
-            print(int(days), 'days')
-        elif counter < 52:
-            months = years * 12
-            print(int(months), 'months')
-        else:
-            months = years % int(years) * 12
-            print(int(years), 'years', int(months), 'months')
-
+        howLong()
         input()
 
-    counter += 1
+    weeks += 1
 # eof
