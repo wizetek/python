@@ -60,6 +60,7 @@ while True:
     for i in my_picks:
         if i in their_picks:
             num_match.append(i)
+
     num_correct = len(num_match)
     print(num_correct, 'match ', num_match)
 
