@@ -13,7 +13,7 @@ def draw(n, p):
         r = random.randint(1, p)
         s.add(r)
 
-    return(list(s))
+    return list(s)
 
 def sixFortyNine():
     my_num = draw(6, 49)
