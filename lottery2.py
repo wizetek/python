@@ -43,22 +43,21 @@ weeks = 1
 while True:
     num_pool = allNum(49)
     num_draw = drawNum(6)
-    their_picks = sorted(num_draw)
+    num_result = sorted(num_draw)
     num_draw = drawNum(1)
-    # their_picks.append(num_draw)
-    their_picks.extend(num_draw)
+    num_result.extend(num_draw)
 
     num_pool = allNum(49)
     num_draw = drawNum(6)
-    my_picks = sorted(num_draw)
+    num_picks = sorted(num_draw)
 
     print('\ndraw #', weeks)
-    print('winning ', their_picks)
-    print('my picks', my_picks)
+    print('winning ', num_result[:-1], 'bonus', num_result[-1])
+    print('my picks', num_picks)
 
     num_match = []
-    for i in my_picks:
-        if i in their_picks:
+    for i in num_picks:
+        if i in num_result:
             num_match.append(i)
 
     num_correct = len(num_match)
