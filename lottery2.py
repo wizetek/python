@@ -21,11 +21,11 @@ def drawNum(d):
     return num_draw
 
 def howLong():
-    years = weeks / 52
-    if weeks < 5:
-        days = weeks * 7
+    years = counter / 52
+    if counter < 5:
+        days = counter * 7
         print(int(days), 'days')
-    elif weeks < 52:
+    elif counter < 52:
         months = years * 12
         print(int(months), 'months')
     else:
@@ -38,20 +38,25 @@ def howLong():
 #
 # main loop
 #
-weeks = 1
+lottery_pool = 49
+lottery_draw = 6
+lottery_bonus = 1
+win_target = 5
+
+counter = 1
 
 while True:
-    num_pool = allNum(49)
-    num_draw = drawNum(6)
+    num_pool = allNum(lottery_pool)
+    num_draw = drawNum(lottery_draw)
     num_result = sorted(num_draw)
-    num_draw = drawNum(1)
+    num_draw = drawNum(lottery_bonus)
     num_result.extend(num_draw)
 
-    num_pool = allNum(49)
-    num_draw = drawNum(6)
+    num_pool = allNum(lottery_pool)
+    num_draw = drawNum(lottery_draw)
     num_picks = sorted(num_draw)
 
-    print('\ndraw #', weeks)
+    print('\ndraw #', counter)
     print('winning ', num_result[:-1], 'bonus', num_result[-1])
     print('my picks', num_picks)
 
@@ -63,10 +68,9 @@ while True:
     num_correct = len(num_match)
     print(num_correct, 'match ', num_match)
 
-    # if num_correct == 6:
-    if num_correct >= 4:
+    if num_correct >= win_target:
         howLong()
         input()
 
-    weeks += 1
+    counter += 1
 # eof
