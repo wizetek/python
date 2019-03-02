@@ -4,20 +4,31 @@
 from random import shuffle
 
 #
-# functions
+# FUNCTIONS
 #
+# def allNum(p):
+#     num_pool = []
+#     for i in range(1, p + 1):
+#         num_pool.append(i)
+#         # shuffle(num_pool)
+#     ''' shuffle only once instead of every time when adding a number '''
+#     shuffle(num_pool)
+#     return num_pool
+''' same as above but using a list comprehension '''
 def allNum(p):
-    num_pool = []
-    for i in range(1, p + 1):
-        num_pool.append(i)
-        shuffle(num_pool)
+    num_pool = [i for i in range(1, p + 1)]
+    shuffle(num_pool)
     return num_pool
 
+# def drawNum(d):
+#     num_draw = []
+#     for i in range(d):
+#         n = num_pool.pop()
+#         num_draw.append(n)
+#     return num_draw
+''' same as above but using a list comprehension '''
 def drawNum(d):
-    num_draw = []
-    for i in range(d):
-        n = num_pool.pop()
-        num_draw.append(n)
+    num_draw = [num_pool.pop() for i in range(d)]
     return num_draw
 
 def howLong():
@@ -36,12 +47,12 @@ def howLong():
             print(int(years), 'years and', int(months), 'months')
 
 #
-# main loop
+# MAIN LOOP
 #
 lottery_pool = 49
 lottery_draw = 6
 lottery_bonus = 1
-win_target = 4
+win_target = 5
 
 counter = 1
 
@@ -64,7 +75,7 @@ while True:
     # for i in num_picks:
     #     if i in num_result:
     #         num_match.append(i)
-    ''' same as above but using list comprehension '''
+    ''' same as above but using a list comprehension '''
     num_match = [i for i in num_picks if i in num_result]
 
     num_correct = len(num_match)
@@ -75,4 +86,4 @@ while True:
         input()
 
     counter += 1
-# eof
+# EOF
