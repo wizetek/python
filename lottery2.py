@@ -41,7 +41,7 @@ def howLong():
 lottery_pool = 49
 lottery_draw = 6
 lottery_bonus = 1
-win_target = 5
+win_target = 4
 
 counter = 1
 
@@ -60,10 +60,12 @@ while True:
     print('winning ', num_result[:-1], 'bonus', num_result[-1])
     print('my picks', num_picks)
 
-    num_match = []
-    for i in num_picks:
-        if i in num_result:
-            num_match.append(i)
+    # num_match = []
+    # for i in num_picks:
+    #     if i in num_result:
+    #         num_match.append(i)
+    ''' same as above but using list comprehension '''
+    num_match = [i for i in num_picks if i in num_result]
 
     num_correct = len(num_match)
     print(num_correct, 'match ', num_match)
