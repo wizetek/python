@@ -6,7 +6,8 @@ from random import shuffle
 #
 # FUNCTIONS
 #
-# def allNum(p):
+
+# def genNum(p):
 #     num_pool = []
 #     for i in range(1, p + 1):
 #         num_pool.append(i)
@@ -15,7 +16,7 @@ from random import shuffle
 #     shuffle(num_pool)
 #     return num_pool
 ''' same as above but using a list comprehension '''
-def allNum(p):
+def genNum(p):
     num_pool = [i for i in range(1, p + 1)]
     shuffle(num_pool)
     return num_pool
@@ -30,6 +31,18 @@ def allNum(p):
 def drawNum(d):
     num_draw = [num_pool.pop() for i in range(d)]
     return num_draw
+
+def sixFortyNine():
+    global lottery_pool, lottery_draw, lottery_bonus
+    lottery_pool, lottery_draw, lottery_bonus = 49, 6, 1
+
+def lottoMax():
+    global lottery_pool, lottery_draw, lottery_bonus
+    lottery_pool, lottery_draw, lottery_bonus = 49, 7, 1
+
+def dailyKeno():
+    global lottery_pool, lottery_draw, lottery_bonus
+    lottery_pool, lottery_draw, lottery_bonus = 70, 20, 0
 
 def howLong():
     years = counter / 52
@@ -49,26 +62,32 @@ def howLong():
 #
 # MAIN LOOP
 #
-lottery_pool = 49
-lottery_draw = 6
-lottery_bonus = 1
+
+sixFortyNine()
+# lottoMax()
+# dailyKeno()
 win_target = 5
 
 counter = 1
 
 while True:
-    num_pool = allNum(lottery_pool)
+    # LOTTERY DRAW
+    num_pool = genNum(lottery_pool)
     num_draw = drawNum(lottery_draw)
     num_result = sorted(num_draw)
+    # BONUS NUMBER
     num_draw = drawNum(lottery_bonus)
     num_result.extend(num_draw)
-
-    num_pool = allNum(lottery_pool)
+    # MY PICKS
+    num_pool = genNum(lottery_pool)
     num_draw = drawNum(lottery_draw)
     num_picks = sorted(num_draw)
 
     print('\ndraw #', counter)
-    print('winning ', num_result[:-1], 'bonus', num_result[-1])
+    if lottery_bonus == 0:
+        print('winning ', num_result)
+    else:
+        print('winning ', num_result[:-1], 'bonus', num_result[-1])
     print('my picks', num_picks)
 
     # num_match = []
