@@ -16,16 +16,14 @@ while True:
 # picks = 8
 draws = 10000
 scramble = 5
-
-collection = list()
 my_numbers = set()
 
-print('Processing..', end='', flush=True)
+print('Processing...', end='', flush=True)
 
 while True:
+    collection = []
 
     for n in range(draws):
-
         pool = [i for i in range(1, 71)]
 
         # shuffle(pool)
@@ -37,10 +35,10 @@ while True:
 
     most_common = max(set(collection), key=collection.count)
     my_numbers.add(most_common)
-    print(most_common, end='..', flush=True)
+    print(end='.', flush=True)
 
     if len(my_numbers) == picks:
         break
 
-print('done\nFinal picks', sorted(my_numbers))
+print('done\n' + str(sorted(my_numbers)))
 # EOF
