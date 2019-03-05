@@ -15,7 +15,7 @@ while True:
 
 # picks = 8
 draws = 10000
-scramble = 5
+scramble = 10
 my_numbers = set()
 
 print('Processing...', end='', flush=True)
@@ -35,7 +35,8 @@ while True:
 
     most_common = max(set(collection), key=collection.count)
     my_numbers.add(most_common)
-    print(end='.', flush=True)
+
+    print(picks - len(my_numbers) + 1, end='...', flush=True)
 
     if len(my_numbers) == picks:
         break
