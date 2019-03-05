@@ -5,7 +5,7 @@ from random import shuffle
 
 while True:
     try:
-        picks = int(input('How many Keno picks (1-10): '))
+        picks = int(input('How many Keno picks? (1-10): '))
     except:
         continue
     if 1 <= picks <= 10:
