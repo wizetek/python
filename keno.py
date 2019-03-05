@@ -20,7 +20,7 @@ scramble = 5
 collection = list()
 my_numbers = set()
 
-print('Processing..', end='')
+print('Processing..', end='', flush=True)
 
 while True:
 
