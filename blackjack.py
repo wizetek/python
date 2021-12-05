@@ -1,8 +1,8 @@
-#
+#!/usr/bin/env python
+
 # blackjack.py
 # from Complete-Python-3-Bootcamp Udemy course
 # Pierian Data International by Jose Portilla
-#
 
 # IMPORT STATEMENTS AND VARIABLE DECLARATIONS:
 
@@ -231,3 +231,5 @@ while True:
     elif new_game[0].lower()=='n':
         print("Thanks for playing!")
         break
+
+# eof
