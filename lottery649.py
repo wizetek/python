@@ -1,4 +1,6 @@
-# lottery.py
+#!/usr/bin/env python
+
+# lottery649.py
 # 2019-02-28 Tom Wizetek
 
 import random
@@ -62,10 +64,11 @@ while True:
     result = len(matching_num)
     print('correct', result)
 
-    # if result == 6:
-    if result >= 4:
+    if result == 6:
+    #if result >= 4:
         howLong()
         input()
 
     weeks += 1
+
 # eof
