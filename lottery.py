@@ -1,4 +1,6 @@
-# lottery2.py
+#!/usr/bin/env python
+
+# lottery.py
 # 2019-03-01 Tom Wizetek
 
 from random import shuffle
@@ -63,11 +65,15 @@ def howLong():
 # LET'S PLAY
 #
 
-sixFortyNine()
-# lottoMax()
-# dailyKeno()
-keno_picks = 5
-win_target = 5
+lottoMax()
+win_target = 7
+
+#sixFortyNine()
+#win_target = 6
+
+#dailyKeno()
+#keno_picks = 2
+#win_target = 2
 
 #
 # MAIN LOOP
@@ -117,4 +123,5 @@ while True:
         input()
 
     counter += 1
-# EOF
+
+# eof
