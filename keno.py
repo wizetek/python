@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # keno.py
 # 2019-03-05 Tom Wizetek
 
@@ -13,7 +15,6 @@ while True:
     else:
         continue
 
-# picks = 8
 draws = 10000
 scramble = 10
 my_numbers = set()
@@ -42,4 +43,5 @@ while True:
         break
 
 print('done\n' + str(sorted(my_numbers)))
-# EOF
+
+# eof
